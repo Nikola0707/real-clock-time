@@ -4,9 +4,10 @@ class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hour: new Date().getHours(),
-      minutes: new Date().getMinutes(),
-      seconds: new Date().getSeconds(),
+      // hour: new Date().getHours(),
+      // minutes: new Date().getMinutes(),
+      // seconds: new Date().getSeconds(),
+      time: new Date().toLocaleTimeString('it-IT'),
       greeting: "What time is it?",
     };
   }
@@ -14,9 +15,10 @@ class Clock extends React.Component {
   updateTime = () => {
     setInterval(() => {
       this.setState({
-        hour: new Date().getHours(),
-        minutes: new Date().getMinutes(),
-        seconds: new Date().getSeconds(),
+        // hour: new Date().getHours(),
+        // minutes: new Date().getMinutes(),
+        // seconds: new Date().getSeconds(),
+        time: new Date().toLocaleTimeString('it-IT')
       });
     }, 1000);
   };
@@ -27,10 +29,11 @@ class Clock extends React.Component {
         <h1>{this.state.greeting}</h1>
         <p>
           {this.updateTime()}
-          {this.state.hour}:{this.state.minutes}:
+          {this.state.time}
+          {/* {this.state.hour}:{this.state.minutes}:
           {this.state.seconds < 10
             ? "0" + this.state.seconds
-            : this.state.seconds}
+            : this.state.seconds} */}
         </p>
       </div>
     );
